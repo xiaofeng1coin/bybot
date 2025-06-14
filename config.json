@@ -1,0 +1,10 @@
+{
+    "API_ID": "your_api_id",
+    "API_HASH": "your_api_hash",
+    "SOURCE_CHAT_IDS": ["source_chat_id_1", "source_chat_id_2", "source_chat_id_3"],
+    "TARGET_CHAT_ID": "target_chat_id",
+    "BOT_TOKEN": "your_bot_token",
+    "BOT_TO_MONITOR_USERNAME": "bot_to_monitor_username",
+    "BOT_MONITORING_CHAT_ID": "bot_monitoring_chat_id",
+    "SESSION_FILE": "/app/sessions/session_name"
+}
