@@ -67,7 +67,7 @@ proxy-providers:
     type: http
     filter: "(^(?!.*(剩余|到期|流量|重置)))"
     url: http://sub.xn--3bs984e5qg.xyz/s/494f3465401daa2143479a290c53220d
-    path: ./proxies/机场2.yaml
+    path: ./proxies/机场3.yaml
     interval: 1800
     health-check:
       enable: true
