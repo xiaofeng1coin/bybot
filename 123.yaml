@@ -63,6 +63,16 @@ proxy-providers:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 300
+   ✈️ 机场3:
+    type: http
+    filter: "(^(?!.*(剩余|到期|流量|重置)))"
+    url: http://sub.xn--3bs984e5qg.xyz/s/494f3465401daa2143479a290c53220d
+    path: ./proxies/机场2.yaml
+    interval: 1800
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
 global-ua: clash.meta
 proxy-groups:
   - name: 🚀 节点选择
@@ -85,6 +95,7 @@ proxy-groups:
     use:
       - ✈️ 机场1 
       - ✈️ 机场2
+      - ✈️ 机场3
 
   - name: ♻️ 自动选择
     type: url-test
@@ -94,6 +105,7 @@ proxy-groups:
     use:
       - ✈️ 机场1 
       - ✈️ 机场2
+      - ✈️ 机场3
 
   - name: 🔯 故障转移
     type: fallback
@@ -103,6 +115,7 @@ proxy-groups:
     use:
       - ✈️ 机场1 
       - ✈️ 机场2
+      - ✈️ 机场3
 
   - name: 🔮 负载均衡
     type: load-balance
@@ -113,6 +126,7 @@ proxy-groups:
     use:
       - ✈️ 机场1 
       - ✈️ 机场2
+      - ✈️ 机场3
 
   - name: 📲 电报消息
     type: select
@@ -330,6 +344,7 @@ proxy-groups:
     use:
       - ✈️ 机场1 
       - ✈️ 机场2
+      - ✈️ 机场3
 
   - name: 🇯🇵 日本节点
     type: url-test
@@ -340,6 +355,7 @@ proxy-groups:
     use:
       - ✈️ 机场1 
       - ✈️ 机场2
+      - ✈️ 机场3
 
   - name: 🇺🇲 美国节点
     type: url-test
@@ -350,6 +366,7 @@ proxy-groups:
     use:
       - ✈️ 机场1 
       - ✈️ 机场2
+      - ✈️ 机场3
 
   - name: 🇨🇳 台湾节点
     type: url-test
@@ -360,6 +377,7 @@ proxy-groups:
     use:
       - ✈️ 机场1 
       - ✈️ 机场2
+      - ✈️ 机场3
 
   - name: 🇸🇬 狮城节点
     type: url-test
@@ -370,6 +388,7 @@ proxy-groups:
     use:
       - ✈️ 机场1 
       - ✈️ 机场2
+      - ✈️ 机场3
 
   - name: 🇰🇷 韩国节点
     type: url-test
@@ -380,6 +399,7 @@ proxy-groups:
     use:
       - ✈️ 机场1 
       - ✈️ 机场2
+      - ✈️ 机场3
 
   - name: qt 其他地区
     type: url-test
@@ -390,6 +410,7 @@ proxy-groups:
     use:
       - ✈️ 机场1 
       - ✈️ 机场2
+      - ✈️ 机场3
 
   - name: 🎥 奈飞节点
     type: select
