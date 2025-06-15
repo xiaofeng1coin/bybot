@@ -8,5 +8,9 @@
         "source_chat_id_2": ["bot1", "bot2"],
         "source_chat_id_3": ["bot1"]
     },
-    "SESSION_FILE": "/app/sessions/session_name"
+    "SESSION_FILE": "/app/sessions/session_name",
+    "EXTRACTED_TEXT_FILE": "/app/dy/dydz.txt",
+    "DYDZ_TXT_PATH": "/app/dy/dydz.txt",
+    "MD5_FILE_PATH": "/app/dy/dydz.md5",
+    "DYNB_PY_PATH": "/app/dy/dymb.py"
 }

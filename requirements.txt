@@ -1,2 +1,4 @@
 telethon==1.40.0
 python-telegram-bot==21.6
+watchdog
+filelock

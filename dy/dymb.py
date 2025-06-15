@@ -1,33 +1,24 @@
-# XX订阅
-proxy-providers:
-  Airport1:
-    url: "https://sub.xn--3bs984e5qg.xyz/s/494f3465401daa2143479a290c53220d"
-    type: http
-    interval: 86400
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    proxy: 直连
-  Airport2:
-    url: "https://sub.xn--3bs984e5qg.xyz/s/494f3465401daa2143479a290c53220d"
-    type: http
-    interval: 86400
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    proxy: 直连
-  Airport3:
-    url: "https://sub.xn--3bs984e5qg.xyz/s/494f3465401daa2143479a290c53220d"
-    type: http
-    interval: 86400
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    proxy: 直连
+subscriptions = [
+    {'name': '机场_1', 'url': 'http://hs.huasuan666.top/api/v1/client/subscribe?token=a736885ef4bfa933eee31dc50e4bf65c'}
+]
 
+yaml_content = """# XX订阅
+proxy-providers:
+"""
+
+for sub in subscriptions:
+    yaml_content += f"""  {sub["name"]}:
+    url: "{sub["url"]}"
+    type: http
+    interval: 86400
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    proxy: 直连
+"""
+
+yaml_content += """
 # 节点信息
 proxies:
   - {name: 直连, type: direct}
@@ -188,3 +179,8 @@ rule-providers:
   google_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs" }
   telegram_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs" }
   netflix_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.mrs" }
+"""
+
+# 将生成的 YAML 内容写入文件
+with open("/app/dy/zydy.yaml", "w", encoding="utf-8") as f:
+    f.write(yaml_content)
